@@ -1,0 +1,137 @@
+/*====================================================================
+ Color scheme
+====================================================================*/
+:root {
+    --color-darkgreen: #0D4646FF;
+    --color-lightgreen: #36917CFF;
+    --color-olive: #CDD38DFF;
+    --color-yellow: #F3D06DFF;
+    --color-orange: #E79B56FF;
+    --color-blue: #00274c;
+    --color-gold: #CFB289;
+    --color-lightblue: #C1CFE2;
+    --rem: 16;
+  }
+
+/*====================================================================
+ General style
+====================================================================*/
+* {
+    box-sizing: border-box;
+  }
+  
+
+/*====================================================================
+Body style
+====================================================================*/
+  body {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8vw;
+    /* display: flex;
+    justify-content: center; */
+
+  }
+
+/*====================================================================
+Layout
+====================================================================*/
+
+
+
+
+
+/*====================================================================
+Table
+====================================================================*/
+
+
+
+.title{
+    text-align: center;    
+    font-weight: bold; 
+    font-size: 2vw;
+    margin-top: 5vw; 
+}
+
+#tblCities_wrapper{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+th {
+    background-color: var(--color-blue);
+    color: white;              
+    padding: 12px;
+    text-align: center;    
+    font-weight: bold;   
+}
+
+
+td {
+    padding: 12px;          
+    border: 1px solid #ddd; 
+    width: 300px; 
+    text-align: center;    
+
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+
+tbody tr:hover {
+    background-color: var(--color-lightblue);    
+}
+
+
+img {
+    border-radius: 5px;      
+    width: 100%;             
+    height: auto;
+
+}
+
+.t-title {
+    font-weight: bold;
+}
+
+.t-image{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*====================================================================
+Input, select, filter
+====================================================================*/
+
+input,
+select{
+    width: 300px;
+    height: 50px;
+}
+
+.dataTables_length,
+.dataTables_filter{
+    margin: 1vw 0;
+    width: 40%;
+}
+
+input:hover,
+select:hover {
+    background-color: var(--color-lightblue);
+}

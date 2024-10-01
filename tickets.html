@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<!--==================================================================
+//
+// Web site: <web site name>
+// Web page: <web page name>
+// Description:
+//   <brief description of web page including its inputs,
+// processing, and outputs>
+// 
+//=================================================================-->
+
+<head>
+
+  <!-- Title and meta tags -->
+  <title>Tickets Page</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Jennifer Jung">
+  <meta name="description" content="Universal Orlano redesign">
+  <meta name="keywords" content="SI379 HW1, Universial Orlando, Tickets Page">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon link -->
+  <link rel="shortcut icon" href="[graphic file]" type="image/x-icon">
+
+  <!-- Styles: external links and internal styles here -->
+  <link rel="stylesheet" href="headerFooter.css">
+  <link rel="stylesheet" href="tickets.css">
+
+
+  <!-- Scripts: external links and internal scripts here -->
+
+  <script>
+
+    //================================================================
+    // validateInputs
+    //================================================================
+
+    "use strict";
+
+
+    function validateInputs() {
+      const customerName = document.getElementById("customer-name").value;
+      const customerEmail = document.getElementById("customer-email").value;
+      const visitDate = document.getElementById("visit-date").value;
+      const numTickets = document.getElementById("num-tickets").value;
+      const discountCode = document.getElementById("discount-code").value;
+
+      if (customerName === "") {
+        alert("Customer name cannot be blank.");
+        return false;
+      } else if (customerEmail === "") {
+        alert("Customer email cannot be blank.");
+        return false;
+      } else if (!validateEmail(customerEmail)) {
+        alert("Please enter a valid email address.");
+        return false;
+      } else if (visitDate === "") {
+        alert("Please select a visit date.");
+        return false;
+      } else if (numTickets < 1 || numTickets > 21) {
+        alert("Number of tickets must be between 1 and 21.");
+        return false;
+      } else if (discountCode.length > 3) {
+        alert("Discount code cannot exceed 3 characters.");
+        return false;
+      }
+      return true;
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Header Section -->
+
+  <div class="header">
+    <a href="home.html">
+      <img src="/logo.png" class="logo" alt="logo: go to home">
+    </a>
+    <div class="head-container">
+
+      <div class="name">Universal Studio Florida</div>
+      <div class="sub-name">Universal Orlando Resort</div>
+    </div>
+    <div class="bt-container">
+      <a href="rides.html">
+        <button type="button" class="bt-ride">Rides</button>
+      </a>
+      <a href="index.html">
+        <button type="button" class="bt-ticket">Home</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Park map -->
+  <div class="parkmap" id="title">Interactive Park Map
+    <a href="https://www.universalorlando.com/web/en/us/plan-your-visit/resort-maps/interactive-map.html?mapFilters=uor.venues;uor.usf,uor.venues;uor.ioa,uor.venues;uor.vb,uor.place_types;ride"
+    target="_blank">
+    <img src="i-map.png" alt="interactive map" class="map-img">
+    </a>
+  </div>
+
+
+
+
+  <!-- Ticket Section -->
+
+  <div id="title">Tickets</div>
+
+
+  <form action="https://www.strategicsystems.biz/Scripts/ServerResponse.php" method="post"
+    onsubmit="return validateInputs()">
+
+    <!-- Name -->
+    <label for="customer-name">Customer Name:</label>
+    <input type="text" id="customer-name" name="customer_name" placeholder="Enter your name" required>
+
+    <!-- Email -->
+    <label for="customer-email">Customer E-mail:</label>
+    <input type="email" id="customer-email" name="customer_email" placeholder="Enter your email" required>
+
+
+    <!-- Visit Date -->
+    <label for="visit-date">Visit Date:</label>
+    <input type="date" id="visit-date" name="visit_date" min="2024-05-01" max="2024-10-31" required>
+
+    <!-- Part of Day -->
+    <label for="part-of-day">Part of Day:</label>
+    <select id="part-of-day" name="part_of_day" required>
+      <option value="whole">Whole Day</option>
+      <option value="half">Half Day</option>
+    </select>
+
+
+    <!-- Number of Tickets -->
+    <label for="num-tickets">Number of Tickets:</label>
+    <input type="number" id="num-tickets" name="num_tickets" min="1" max="21" value="1" required>
+
+    <!-- Parking Option -->
+    <label for="parking-option">Parking Option:</label>
+    <select id="parking-option" name="parking_option" required>
+      <option value="premium">Premium</option>
+      <option value="regular">Regular</option>
+      <option value="none">Not Needed</option>
+    </select>
+
+    <!-- Discount Code -->
+    <label for="discount-code">Discount Code:</label>
+    <input type="text" id="discount-code" name="discount_code" maxlength="3" placeholder="ABC">
+
+    <!-- Payment Type -->
+    <label for="payment-type">Payment Type:</label>
+    <select id="payment-type" name="payment_type" required>
+      <option value="credit-card">Credit Card</option>
+      <option value="paypal">PayPal</option>
+      <option value="apple">Apple</option>
+      <option value="cash in park">Cash In Park</option>
+    </select>
+
+    <!-- Submit Button -->
+    <label></label>
+    <input type="submit" value="Submit">
+  </form>
+
+
+  <!-- Footer Section -->
+
+  <div class="footer">
+    <div class="ft-name">Universal Orlando Resort</div>
+    <div class="address">6000 Universal Blvd, Orlando, FL 32819</div>
+    <div class="email">GuestServices@UniversalOrlando.com</div>
+    <div class="copyright">© 2024 SI379 Jennifer Jung</div>
+  </div>
+
+</body>
+
+</html>

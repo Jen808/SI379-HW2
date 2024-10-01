@@ -1,0 +1,130 @@
+/*====================================================================
+ Color scheme
+====================================================================*/
+:root {
+  --color-darkgreen: #0D4646FF;
+  --color-lightgreen: #36917CFF;
+  --color-olive: #CDD38DFF;
+  --color-yellow: #F3D06DFF;
+  --color-orange: #E79B56FF;
+  --color-blue: #00274c;
+  --color-gold: #CFB289;
+  --color-lightblue: #C1CFE2;
+  --rem: 16;
+}
+
+/*====================================================================
+ General style
+====================================================================*/
+* {
+  box-sizing: border-box;
+}
+
+/*====================================================================
+ Body style
+====================================================================*/
+body {
+  font-family: verdana, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8vw;
+}
+
+
+/*====================================================================
+ Header styles
+====================================================================*/
+
+.header {
+    width: 100%;
+    height: 12vh;
+    background-color: var(--color-blue);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 8vw;
+    height: auto;
+    margin-left: 1vw;
+  
+  }
+  
+  .name {
+    font-size: 1.6em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-left: 1.4vw;
+  }
+  
+  .sub-name {
+    font-size: 1em;
+    margin-left: 1.5vw;
+    color: white;
+  }
+  
+  .bt-container {
+    margin-left: 55vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+  }
+  
+  .bt-ride,
+  .bt-ticket {
+    border: none;
+    background-color: white;
+    color: var(--color-blue);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 0.6vw 1.2vw;
+    border-radius: 2vw;
+    cursor: pointer;
+  }
+  
+  .bt-ride:hover,
+  .bt-ticket:hover {
+    background-color: var(--color-gold);
+  
+  }
+  
+  
+
+
+/*====================================================================
+Footer
+====================================================================*/
+
+.footer{
+    background-color: var(--color-gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ft-name{
+    color: var(--color-blue);
+    font-size: 1em;
+    font-weight: 600;
+    padding: 1vw;
+  }
+  
+  .address,
+  .email,
+  .copyright{
+    font-size: 0.8vw;
+    line-height: 1.2vw;
+  }
+  
+  .copyright{
+    padding-bottom: 1vw;
+  }
+  
