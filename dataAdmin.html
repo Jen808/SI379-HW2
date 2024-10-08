@@ -7,7 +7,7 @@
 // Web page: Park
 // Course:   SI 379
 // Homework: 1
-// Author:   Dan Ouellette
+// Author:   Jennifer Jung
 // Description:
 //   This web site features amusement park Iron Island.  The Park page
 // contains general information about the park including its name,
@@ -21,7 +21,7 @@
 
     <title>Data Admin, v2</title>
     <meta charset="UTF-8">
-    <meta name="author" content="Dan Ouellette">
+    <meta name="author" content="Jennifer Jung">
     <meta name="description" content="Iron Island">
     <meta name="keywords" content="park, rides, fun">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,8 +32,10 @@
     <!-- External CSS link -->
     <link rel="stylesheet" href="IronIsland-ExternalStyles.css">
 
-    <script src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js">
-    </script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
+
 
     <script>
         "use strict";
@@ -99,6 +101,8 @@
                 });
         });
 
+
+
     </script>
 
 
@@ -116,27 +120,47 @@
     </div>
     <hr>
 
+    <div class="contentpanel1">
+        <h1>Data Admin Page</h1>
+        <button onclick="storeRideData()">Store Ride Data</button>
+        <button onclick="clearRideData()">Clear Ride Data</button>
+        <p id="status">Status messages will appear here...</p>
+    </div>
+
+    <div class="footerPanel">
+        <h3>
+          Iron Island
+          &nbsp;&nbsp;7912 Coventry, Grosse Ile, MI 48138
+          &nbsp;&nbsp;734-761-3355
+          &nbsp;&nbsp;<a href="mailto:info@ironislandpark.com">
+          Email Us!</a>
+          &nbsp;&nbsp;Copyright &#169; 2024
+        </h3>
+      </div>
+
+
+
     <script>
 
+        // button to call function storeRideData
+
         function storeRideData() {
-            var ridesArray = [
-                "Blue Streak",
-                "Haunted Mansion",
-                "It's a Small World",
-                "Maverick",
-                "Top Thrill Dragster",
-                "WindSeeker",
-                "Space Mountain"
-            ];
+            localStorage.setItem("rides", JSON.stringify(data));
+            // status.innerHTML = "Rides array stored successfully!";
+            document.getElementById("status").innerHTML = "Rides array stored successfully!";
 
-            localStorage.setItem("rides", JSON.stringify(ridesArray));
-            status.innetText = "Rides array stored successfully!"
         }
 
-        function clearRideData(){
+
+        
+        // button to call function clearRideData
+
+        function clearRideData() {
             localStorage.removeItem("rides");
-            status.innerText = "Rides array cleared from local storage!"
+            // status.innerHTML = "Rides array cleared from local storage!";
+            document.getElementById("status").innerHTML = "Rides array cleared from local storage!";
         }
+
 
 
     </script>
