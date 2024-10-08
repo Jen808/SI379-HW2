@@ -306,3 +306,25 @@ a link color on hover
  a:hover{
   color: var(--color-lightgold);
  }
+
+
+ 
+/*====================================================================
+button for data admin
+====================================================================*/
+
+.databutton-container{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.databutton{
+  background-color: var(--color-teal);
+  color: #FFF;
+  font-weight: 600;
+  font-size: 1.2em;
+  padding: 10px;
+}

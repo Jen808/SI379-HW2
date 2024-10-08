@@ -6,15 +6,11 @@
 // Web site: Data Admin, v2
 // Web page: Park
 // Course:   SI 379
-// Homework: 1
+// Homework: 2
 // Author:   Jennifer Jung
 // Description:
-//   This web site features amusement park Iron Island.  The Park page
-// contains general information about the park including its name,
-// parking options, concessions, park history, and park location shown
-// on a map image.  The Rides page shows information about selected 
-// park rides.  The Tickets page enables users to puchase tickets.
-//
+// This web site features amusement park Iron Island.  The Data Admin page
+// is to store ride data and clear ride data
 //=================================================================-->
 
 <head>
@@ -122,21 +118,24 @@
 
     <div class="contentpanel1">
         <h1>Data Admin Page</h1>
-        <button onclick="storeRideData()">Store Ride Data</button>
-        <button onclick="clearRideData()">Clear Ride Data</button>
+        <div class="databutton-container">
+            <button onclick="storeRideData()" class="databutton">Store Ride Data</button>
+            <button onclick="clearRideData()" class="databutton">Clear Ride Data</button>
+        </div>
+
         <p id="status">Status messages will appear here...</p>
     </div>
 
     <div class="footerPanel">
         <h3>
-          Iron Island
-          &nbsp;&nbsp;7912 Coventry, Grosse Ile, MI 48138
-          &nbsp;&nbsp;734-761-3355
-          &nbsp;&nbsp;<a href="mailto:info@ironislandpark.com">
-          Email Us!</a>
-          &nbsp;&nbsp;Copyright &#169; 2024
+            Iron Island
+            &nbsp;&nbsp;7912 Coventry, Grosse Ile, MI 48138
+            &nbsp;&nbsp;734-761-3355
+            &nbsp;&nbsp;<a href="mailto:info@ironislandpark.com">
+                Email Us!</a>
+            &nbsp;&nbsp;Copyright &#169; 2024
         </h3>
-      </div>
+    </div>
 
 
 
@@ -152,7 +151,7 @@
         }
 
 
-        
+
         // button to call function clearRideData
 
         function clearRideData() {
